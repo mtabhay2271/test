@@ -106,10 +106,10 @@ router.get('/nearest-users', verifyToken, async (req, res) => {
                     }
                 }
             },
-            { $limit: 5 }
+            { $limit: 6 }
         ]);
 
-        res.json(nearestUsers);
+        res.json(nearestUsers.filter(e=> e.email!=loggedInUser.email));
     } catch (err) {
         console.error('Error fetching nearest users:', err);
         res.status(500).json({ message: 'An error occurred while fetching nearest users.' });
