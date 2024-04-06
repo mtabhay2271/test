@@ -7,7 +7,7 @@ const authRoute = require('./controller/auth');
 const userRoute = require('./controller/user');
 require('dotenv').config()
 // Initialize express app
-const app = express();
+const app = express(); 
 
 // Middleware
 app.use(bodyParser.json());
